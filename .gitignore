@@ -1,0 +1,28 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/dist
+
+# environment
+.env
+.env.test
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor
+/.vscode
+
+# OS
+.DS_Store
+
+# EJS
+/views/*.ejs
