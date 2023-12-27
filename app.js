@@ -18,7 +18,8 @@ const cookieParser = require('cookie-parser');
 
 const login = require('./src/routers/login.route');
 const auth = require('./src/routers/auth.route');
-const authenticatedUser = require('./src/middlewares/auth_user.middleware')
+const authenticatedUser = require('./src/middlewares/auth_user.middleware');
+const home = require('./src/routers/home.route');
 
 
 //Initialize express app
@@ -45,15 +46,23 @@ app.use(cors()).use(cookieParser());
  */
 app.get('/login', login)
 
+
 /**
  * Auth page
  */
 app.use('/auth', auth);
 
+
 /**
  * Check user is authenticated
  */
 app.use(authenticatedUser);
+
+
+/**
+ * Home page
+ */
+app.use('/', home);
 
 
 app.listen(5000, () => {

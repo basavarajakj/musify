@@ -30,4 +30,4 @@ const getRefreshToken = async (freshToken) => {
   }
 }
 
-module.exports = getRefreshToken;
+module.exports = { getRefreshToken };
