@@ -1,0 +1,26 @@
+<div class="player-sm hide" data-player>
+
+  <div class="track-info">
+    <figure class="img-holder track-banner">
+      <img src="/images/track-banner.png" class="img-cover" alt="" data-track-banner>
+    </figure>
+
+    <div class="min-width: 0">
+      <p class="title-small track-title ellipsis-one-line" data-track-name>
+        Track Name
+      </p>
+
+      <p class="title-small track-text ellipsis-two-line" data-track-artist>
+        Track artists name
+      </p>
+
+    </div>
+  </div>
+
+  <%- include('./play_btn', {
+    dataAttr: 'data-player-control-play'
+  }) %>
+
+  <progress class="progress" data-player-progress-sm></progress>
+  <button class="track-view-btn state-layer" aria-label="Now Playing song" data-modal-player-toggler></button>
+</div>

@@ -43,12 +43,19 @@ const home = async (req, res) => {
 
   // featured playlist
   const featuredPlaylists = await playListApi.getFeatured(req, apiConfig.LOW_LIMIT);
+
+  // top playlist 
+  const topPlaylist = await playListApi.getCategoryPlaylist(req, apiConfig.LOW_LIMIT);
+  console.log(topPlaylist);
+
+
   res.render('./pages/home', {
     currentProfile,
     recommendedAlbums,
     recommendedArtists,
     newRelease,
-    featuredPlaylists
+    featuredPlaylists,
+    topPlaylist,
   });
 }
 

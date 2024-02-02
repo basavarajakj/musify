@@ -30,7 +30,14 @@ const getFeatured = async (req, itemLimit) => {
 const getCategoryPlaylist = async (req, itemLimit) => {
   const {offset, limit, page } = getUrlQuery(req.params, itemLimit);
   const { categoryId = 'toplists' } = req.params;
+
+  const { data: catPlaylist } = await getData(`/browse/categories/${categoryId}/playlists?limit=${limit}&offset=${offset}`, req.cookies.access_token);
+
+  const /** {string} */ baseUrl = `${req.baseUrl}/${categoryId}`
+
+  return { baseUrl, page, ...catPlaylist };
 }
 module.exports = {
   getFeatured,
+  getCategoryPlaylist,
 }
